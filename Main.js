@@ -1,6 +1,7 @@
 
 const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
+const btnLogOut = document.getElementById("btnLogOut");
 const txtEmail = document.getElementById("txtEmail");
 const txtPassword = document.getElementById("txtPassword");
 const auth = firebase.auth();
