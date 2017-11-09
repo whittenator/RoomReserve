@@ -26,9 +26,9 @@ time, audio {
 }
 
 .container {
-  height:720px;
-  width: 900px;
-    padding-top: 20px;
+  height:72%;
+  width: 90%;
+  padding: 20px;
   display: inline-flex;
 }
 
@@ -42,7 +42,7 @@ time, audio {
   justify-content: space-between;
   background-color: white;
   font-size: 0.5em;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .timings span {
@@ -63,11 +63,24 @@ time, audio {
 
 .selectedmonth {
     float: left;
+    padding: 5px;
     
 }
 
 .selecteddays {
     float: left;
+    padding: 5px;
+}
+
+.selectedyear {
+    float: left;
+    
+    padding: 5px;
+}
+
+.findroom {
+    
+    padding: 5px;
 }
 
 .event {
