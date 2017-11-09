@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700" rel="stylesheet">
+
+	<script src="https://use.fontawesome.com/939e9dd52c.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    
+	<link rel="stylesheet" type="text/css" href="Calendar-Style.css">
+</head>
+<body>
+    
+    <div class="SelectedMonth">
+		<label for="start_month_modal" class="hidden-text"> Select A Month </label>
+		<select  id="start_month_modal" onChange="getMonthValue(this)"><option value="01" >January</option><option value="02" >February</option><option value="03" >March</option><option value="04" >April</option><option value="05" >May</option><option value="06" >June</option><option value="07" >July</option><option value="08" >August</option><option value="09" >September</option><option value="10" >October</option><option value="11" selected>November</option><option value="12" >December</option></select>
+	</div>
+    
+    <div class="SelectedDays">
+		<label for="start_day_modal" class="hidden-text"> Select A Day of the Month </label>
+		<select  id="start_day_modal" onChange="getDayValue(this)" ><option value="01" >1</option><option value="02" >2</option><option value="03" >3</option><option value="04" >4</option><option value="05" >5</option><option value="06" >6</option><option value="07" >7</option><option value="08" selected>8</option><option value="09" >9</option><option value="10" >10</option><option value="11" >11</option><option value="12" >12</option><option value="13" >13</option><option value="14" >14</option><option value="15" >15</option><option value="16" >16</option><option value="17" >17</option><option value="18" >18</option><option value="19" >19</option><option value="20" >20</option><option value="21" >21</option><option value="22" >22</option><option value="23" >23</option><option value="24" >24</option><option value="25" >25</option><option value="26" >26</option><option value="27" >27</option><option value="28" >28</option><option value="29" >29</option><option value="30" >30</option><option value="31" >31</option></select>
+	</div>
+
+    <div class ="container">
+  <div class="timings">
+    <div> <span> 9:00 </span> AM </div>
+    <div> 9:30 </div>
+    <div> <span> 10:00 </span>AM </div>
+    <div> 10:30 </div>
+    <div> <span> 11:00 </span>AM </div>
+    <div> 11:30 </div>
+    <div> <span> 12:00 </span>PM </div>
+    <div> 12:30 </div>
+    <div> <span> 1:00 </span>PM </div>
+    <div> 1:30 </div>
+    <div> <span> 2:00 </span>PM </div>
+    <div> 2:30 </div>
+    <div> <span> 3:00 </span>PM </div>
+    <div> 3:30 </div>
+    <div> <span> 4:00 </span>PM </div>
+    <div> 4:30 </div>
+    <div> <span> 5:00 </span>PM </div>
+    <div> 5:30 </div>
+    <div> <span> 6:00 </span>PM </div>
+    <div> 6:30 </div>
+    <div> <span> 7:00 </span>PM </div>
+    <div> 7:30 </div>
+    <div> <span> 8:00 </span>PM </div>
+    <div> 8:30 </div>
+    <div> <span> 9:00 </span>PM </div>
+  </div>
+
+  <div class="days" id="events">
+  </div>
+
+</div>
+    
+    
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDbyGWFHJRbn7tZWn8Zlyuw1Sjk57vXV5w",
+    authDomain: "room-reserve-39fea.firebaseapp.com",
+    databaseURL: "https://room-reserve-39fea.firebaseio.com",
+    projectId: "room-reserve-39fea",
+    storageBucket: "room-reserve-39fea.appspot.com",
+    messagingSenderId: "742962849929"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="Calendar.js"></script>
+    <script src="LayOutDay.js"></script>
+
+</body>
+</html>
