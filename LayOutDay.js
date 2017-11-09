@@ -13,7 +13,7 @@ function generateMockEvents (n) {
     let end = start + Math.floor(Math.random() * (minutesInDay - start));
     events.push({start: start, end: end})
     n --;
-  }
+  } 
 
   return events;
 }

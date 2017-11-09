@@ -1,8 +1,8 @@
 const containerHeight = 720;
 const containerWidth = 600;
 const minutesinDay = 60 * 12;
-const monthsValue = document.getElementsByClassName("Months");
-const daysValue = document.getElementsByClassName("SelectedDays");
+const monthsValue = document.getElementsByClassName("selectedmonth");
+const daysValue = document.getElementsByClassName("selecteddays");
 let collisions = [];
 let width = [];
 let leftOffSet = [];
@@ -11,10 +11,11 @@ let leftOffSet = [];
 //Useful for changing date of boxes at top.
 function getMonthValue(monthsValue) {
     alert(monthsValue.selectedIndex);
-
-function getDayValue(monthsValue) {
-    alert(monthsValue.selectedIndex);
 }
+
+function getDayValue(daysValue) {
+    alert(daysValue.selectedIndex);
+} 
 
 // append one event to calendar
 var createEvent = (height, top, left, units) => {

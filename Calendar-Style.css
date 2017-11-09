@@ -28,6 +28,7 @@ time, audio {
 .container {
   height:720px;
   width: 900px;
+    padding-top: 20px;
   display: inline-flex;
 }
 
@@ -60,6 +61,15 @@ time, audio {
   box-sizing: border-box;
 }
 
+.selectedmonth {
+    float: left;
+    
+}
+
+.selecteddays {
+    float: left;
+}
+
 .event {
   background-color: white;
   border-style: solid;
@@ -77,4 +87,4 @@ time, audio {
 .event .title {
   color: #57b986;
   font-size: 200%;
-}
+}  
