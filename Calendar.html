@@ -9,6 +9,26 @@
     <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
     
 	<link rel="stylesheet" type="text/css" href="Calendar-Style.css">
+    <style>
+        table {
+            border-collapse: collapse;
+            margin-top: 25px;
+            
+        }
+        table, th, tr, td {
+            border: 1px solid black;
+        }
+        th {
+            padding: 25px;
+            background-color: #850F88;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+        }
+        tr {align-items: center;}
+        
+        
+    </style>
 </head>
 <body> 
     
@@ -25,42 +45,26 @@
     </div>
     
     <div class="findroom">
-        <button id="btnFindRoom" class="btn btn-action">Find A Room</button>
+        <button id="btnFindRoom" class="btn btn-action" onclick="uploadDate()">Find A Room</button>
+    </div>
+    
+    <div class="backButton">
+        <button id="btnBackButton" class="btn btn-action" onclick="window.location='Main.html'">Go Back</button>
     </div>
 
-    <div class ="container">
-  <div class="timings">
-    <div> <span> 9:00 </span> AM </div>
-    <div> 9:30 </div>
-    <div> <span> 10:00 </span>AM </div>
-    <div> 10:30 </div>
-    <div> <span> 11:00 </span>AM </div>
-    <div> 11:30 </div>
-    <div> <span> 12:00 </span>PM </div>
-    <div> 12:30 </div>
-    <div> <span> 1:00 </span>PM </div>
-    <div> 1:30 </div>
-    <div> <span> 2:00 </span>PM </div>
-    <div> 2:30 </div>
-    <div> <span> 3:00 </span>PM </div>
-    <div> 3:30 </div>
-    <div> <span> 4:00 </span>PM </div>
-    <div> 4:30 </div>
-    <div> <span> 5:00 </span>PM </div>
-    <div> 5:30 </div>
-    <div> <span> 6:00 </span>PM </div>
-    <div> 6:30 </div>
-    <div> <span> 7:00 </span>PM </div>
-    <div> 7:30 </div>
-    <div> <span> 8:00 </span>PM </div>
-    <div> 8:30 </div>
-    <div> <span> 9:00 </span>PM </div>
-  </div>
-
-  <div class="days" id="events">
-  </div>
-
-</div>
+    <div class="timeTable">
+        <table>
+            <tr><th ></th><th>Room 1</th><th>Room 2</th><th>Room 3</th><th>Room 4</th><th>Room 5</th></tr>
+            <tr><th>9:00 A.M</th><td id="nine1" class="t" value="01"><button id="btnAddTime1" class="addToTimeSlot" onclick="turnRed(this.parentNode.id)">+</button></td><td id="nine2" value="02" class="t"><button id="btnAddTime2" class="addToTimeSlot" onclick="turnRed(this.parentNode.id)">+</button></td><td id="nine3" class="t"><button id="btnAddTime3" class="addToTimeSlot" onclick="turnRed(this.parentNode.id)">+</button></td><td id="nine4" class="t"><button id="btnAddTime4" class="addToTimeSlot" onclick="turnRed(this.parentNode.id)">+</button></td><td id="nine5" class="t"><button id="btnAddTime5" class="addToTimeSlot" onclick="turnRed(this.parentNode.id)">+</button></td></tr>
+            <tr><th>10:00 A.M</th></tr>
+            <tr><th>11:00 A.M</th></tr>
+            <tr><th>12:00 P.M</th></tr>
+            
+            
+           
+            
+        </table>
+    </div>
     
     
 <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>

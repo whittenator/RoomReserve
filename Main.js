@@ -2,9 +2,9 @@
 const btnLogin = document.getElementById("btnLogin");
 const btnSignUp = document.getElementById("btnSignUp");
 const btnLogOut = document.getElementById("btnLogOut");
-const txtEmail = document.getElementById("txtEmail");
-const txtPassword = document.getElementById("txtPassword");
-const auth = firebase.auth();
+var txtEmail = document.getElementById("txtEmail");
+var txtPassword = document.getElementById("txtPassword");
+var auth = firebase.auth();
 
 
 btnLogin.addEventListener('click', e => {
@@ -15,6 +15,7 @@ btnLogin.addEventListener('click', e => {
     //Sign in
     const promise = auth.signInWithEmailAndPassword(email,pass);
     promise.catch(e => console.log(e.message));
+    
     
     
     
@@ -30,6 +31,7 @@ btnSignUp.addEventListener('click', e => {
     const promise = auth.createUserWithEmailAndPassword(email,pass);
     promise.catch(e => console.log(e.message));
     
+    
 });
 
 //Add a realtime listener
@@ -37,8 +39,10 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
         console.log(firebaseUser);
         console.log("Logged in");
+        window.location = "Calendar.html";
     }else{
         console.log('Not logged in');
+        console.log(firebaseUser);
     }
 });
 
