@@ -53,16 +53,17 @@ function turnRed(cellId, btnId) {
      database.ref('Rooms/' + cellId).set({
         UserEmail: beforeAt,
         TimeStamp: firebase.database.ServerValue.TIMESTAMP,
-        ButtClassName: 
+        BtnClassName: hiddenBtn,
+        BtnId: btnId
     });
     
   //Delete after timestamp is of a certain time
     var reference = database.ref('Rooms/' + cellId);
     var cutoff = now -1*60*60*1000;
     var old = reference.orderByChild("TimeStamp").endAt(cutoff).limitToLast(1);
-    var listener = old.on('child_added', function(snapshot) {
+    /*var listener = old.on('child_added', function(snapshot) {
         
-    });
+    });*/
     
    
                           
@@ -92,6 +93,21 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 });
 
 window.onload = function(){
-   console.log("Loaded Page!"); 
+   var query = firebase.database().ref("Rooms").orderByKey();
+    query.once("value")
+      .then(function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                var key = childSnapshot.key;
+                var btnId = childSnapshot.child("BtnId").val();
+                document.getElementById(btnId).className = "hide";
+                console.log(btnId);
+                document.getElementById(key).className = "t2";
+                console.log(key);
+                var childData = childSnapshot.val();
+                console.log(childData);
+            });
+            });
+           
+    
 }
  
