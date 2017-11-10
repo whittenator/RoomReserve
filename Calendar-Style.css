@@ -30,14 +30,17 @@
    display: block;
    margin: auto;
 }
+.hide {
+    display:none;
+}
 
 .t {
-    background: #00f
+    background-color: greenyellow;
     
 }
 
 .t2 {
-    background: #f00
+   background-color: red;
 }
 
 

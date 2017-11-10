@@ -4,13 +4,17 @@ var daysValue = document.getElementsByClassName("selecteddays");
 var yearValue = document.getElementsByClassName("selectedyear");
 var btnFindRoom = document.getElementById("btnFindRoom");
 var btnAddTime = document.getElementById("btnAddTime");
-var cellId;
+var cellId, btnId;
 var monthNumber = 0;
 var yearNumber = 0;
 var dayNumber = 0;
 var user = firebase.auth().currentUser;
 var database = firebase.database();
-var uid, email;
+var uid, email, savedTimeStamp;
+var hourInMs = 3600000;
+var now = Date.now();
+var timeLeft = 0;
+var hiddenBtn = "hide";
 
 
 
@@ -33,25 +37,39 @@ function getYearValue(yearValue) {
      yearNumber = yearValue.selectedIndex;
 }
 
-function turnRed(cellId) {
+
+function turnRed(cellId, btnId) {
     
     var cell = document.getElementById(cellId);
+    let btn = document.getElementById(btnId);
+    btn.className = "hide";
+    
     var beforeAt = email.substr(0, email.indexOf('@'));
-    var timeStamp = Math.floor(Date.now());
-    console.log(timeStamp);
+    cell.className = "t2";
+    
+    
+    
+    
      database.ref('Rooms/' + cellId).set({
         UserEmail: beforeAt,
-        TimeStamp: timeStamp
+        TimeStamp: firebase.database.ServerValue.TIMESTAMP,
+        ButtClassName: 
+    });
+    
+  //Delete after timestamp is of a certain time
+    var reference = database.ref('Rooms/' + cellId);
+    var cutoff = now -1*60*60*1000;
+    var old = reference.orderByChild("TimeStamp").endAt(cutoff).limitToLast(1);
+    var listener = old.on('child_added', function(snapshot) {
+        
     });
     
    
-    //var timeStamp = Math.floor(Date.now());
+                          
+        
+       
     
-    if(cell.className == "t"){
-        cell.className = "t2";
-    } else if(cell.className == "t2"){
-        cell.className = "t";
-    }
+    
 }
 
 function uploadDate() {
@@ -72,4 +90,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log('Not logged in');
     }
 });
+
+window.onload = function(){
+   console.log("Loaded Page!"); 
+}
  
